@@ -1,0 +1,549 @@
+{
+    "validator" :
+    {
+        "$jsonSchema" :
+        {
+            "title" : "Metadata section",
+            "description" : "Schema json to metadata section",
+            "bsonType" : "object",
+            "required" : 
+            ["_id",
+                "datasetTitle",
+                "pmid",
+                "correspondingAuthorEmail",
+                "strain",
+                "referenceGenome",
+                "datasetAccesionNumberDatabase"
+            ],
+            "oneOf" :
+            [
+                {
+                    "required" : ["experimentalDetailsB", "identificationDetailsTfbs"],
+                    "not" : 
+                    {
+                        "required" : ["experimentalDetailsGe", "experimentalDetailsOt"]
+                    }
+                },
+                {
+                    "required" : ["experimentalDetailsGe"],
+                    "not" : 
+                    {
+                        "required" : ["experimentalDetailsB", "identificationDetailsTfbs", "experimentalDetailsOt"]
+                    }
+                },
+                {
+                    "required" : ["experimentalDetailsOt"],
+                    "not" :
+                    {
+                        "required" : ["experimentalDetailsB", "identificationDetailsTfbs" ,"experimentalDetailsGe"]
+                    }
+                }  
+            ],
+            "properties" :
+            {
+                "_id" : 
+                {
+                    "bsonType" : "string"
+                },
+                "datasetTitle" : 
+                {
+                    "bsonType" : "object",
+                    "properties" : 
+                    {
+                        "value" : 
+                        {
+                            "bsonType" : "string"
+                        },
+                        "comments" : 
+                        {
+                            "bsonType" : "string"
+                        }
+                    }
+                },
+                "pmid" : 
+                {
+                    "bsonType" : "object",
+                    "properties" : 
+                    {
+                        "value" : 
+                        {
+                            "bsonType" : "string"
+                        },
+                        "comments" : 
+                        {
+                            "bsonType" : "string"
+                        }
+                    } 
+                },
+                "correspondingAuthorEmail" : 
+                {
+                    "bsonType" : "object",
+                    "properties" : 
+                    {
+                        "value" : 
+                        {
+                            "bsonType" : "string"
+                        },
+                        "comments" : 
+                        {
+                            "bsonType" : "string"
+                        }
+                    }
+                },
+                "strain" :
+                {
+                    "bsonType" : "object",
+                    "properties" : 
+                    {
+                        "value" : 
+                        {
+                            "bsonType" : "string"
+                        },
+                        "comments" : 
+                        {
+                            "bsonType" : "string"
+                        }
+                    }
+                },
+                "referenceGenome" : 
+                {
+                    "bsonType" : "object",
+                    "properties" : 
+                    {
+                        "value" : 
+                        {
+                            "bsonType" : "string"
+                        },
+                        "comments" : 
+                        {
+                            "bsonType" : "string"
+                        }
+                    }
+                },
+                "datasetAccesionNumberDatabase" :
+                {
+                    "bsonType" : "object",
+                    "properties" : 
+                    {
+                        "value" : 
+                        {
+                            "bsonType" : "string"
+                        },
+                        "comments" : 
+                        {
+                            "bsonType" : "string"
+                        }
+                    }
+                },
+                "experimentalDetailsB" :
+                {
+                    "bsonType" : "object",
+                    "required" : 
+                    ["comparisonOrder",
+                        "threshold",
+                        "method",
+                        "instrument",
+                        "evidence"
+                    ],
+                    "properties" :
+                    {
+                        "comparisonOrder" :
+                        {
+                            "bsonType" : "object",
+                            "properties" : 
+                            {
+                                "value" : 
+                                {
+                                    "bsonType" : "string"
+                                },
+                                "comments" : 
+                                {
+                                    "bsonType" : "string"
+                                }
+                            }
+                        },
+                        "threshold" : 
+                        {
+                            "bsonType" : "object",
+                            "properties" : 
+                            {
+                                "value" : 
+                                {
+                                    "bsonType" : "double",
+                                    "minimum" : 0
+                                },
+                                "comments" : 
+                                {
+                                    "bsonType" : "string"
+                                }
+                            }
+                        },
+                        "method" : 
+                        {
+                            "bsonType" : "object",
+                            "properties" : 
+                            {
+                                "value" : 
+                                {
+                                    "bsonType" : "string"
+                                },
+                                "comments" : 
+                                {
+                                    "bsonType" : "string"
+                                }
+                            }
+                        },
+                        "methodDetails" :
+                        {
+                            "bsonType" : "object",
+                            "properties" : 
+                            {
+                                "value" : 
+                                {
+                                    "bsonType" : "string"
+                                },
+                                "comments" : 
+                                {
+                                    "bsonType" : "string"
+                                }
+                            }
+                        },
+                        "instrument" :
+                        {
+                            "bsonType" : "object",
+                            "properties" : 
+                            {
+                                "value" : 
+                                {
+                                    "bsonType" : "string"
+                                },
+                                "comments" : 
+                                {
+                                    "bsonType" : "string"
+                                }
+                            }
+                        },
+                        "evidence" : 
+                        {
+                            "bsonType" : "object",
+                            "properties" : 
+                            {
+                                "value" : 
+                                {
+                                    "bsonType" : "string"
+                                },
+                                "comments" : 
+                                {
+                                    "bsonType" : "string"
+                                }
+                            }
+                        } 
+                    },
+                    "additionalProperties" : false
+                },
+                "identificationDetailsTfbs" : 
+                {
+                    "bsonType" : "object",
+                    "required" : 
+                    ["statisticalModel",
+                        "threshold",
+                        "method",
+                        "evidence"
+                    ],
+                    "properties" : 
+                    {
+                        "statisticalModel" :
+                        {
+                            "bsonType" : "object",
+                            "properties" : 
+                            {
+                                "value" : 
+                                {
+                                    "bsonType" : "string"
+                                },
+                                "comments" : 
+                                {
+                                    "bsonType" : "string"
+                                }
+                            }
+                        },
+                        "threshold" : 
+                        {
+                            "bsonType" : "object",
+                            "properties" : 
+                            {
+                                "value" : 
+                                {
+                                    "bsonType" : "double",
+                                    "minimum" : 0
+                                },
+                                "comments" : 
+                                {
+                                    "bsonType" : "string"
+                                }
+                            }
+                        },
+                        "method" : 
+                        {
+                            "bsonType" : "object",
+                            "properties" : 
+                            {
+                                "value" : 
+                                {
+                                    "bsonType" : "string"
+                                },
+                                "comments" : 
+                                {
+                                    "bsonType" : "string"
+                                }
+                            }
+                        },
+                        "methodDetails" :
+                        {
+                            "bsonType" : "object",
+                            "properties" : 
+                            {
+                                "value" : 
+                                {
+                                    "bsonType" : "string"
+                                },
+                                "comments" : 
+                                {
+                                    "bsonType" : "string"
+                                }
+                            }
+                        },
+                        "evidence" :
+                        {
+                            "bsonType" : "object",
+                            "properties" : 
+                            {
+                                "value" : 
+                                {
+                                    "bsonType" : "string"
+                                },
+                                "comments" : 
+                                {
+                                    "bsonType" : "string"
+                                }
+                            }
+                        }
+                    },
+                    "additionalProperties" : false
+                },
+                "experimentalDetailsGe" :
+                {
+                    "bsonType" : "object",
+                    "required" : 
+                    ["method",
+                        "instrument",
+                        "evidence",
+                        "statisticalModel"
+                    ],
+                    "properties" : 
+                    {
+                        "method" :
+                        {
+                            "bsonType" : "object",
+                            "properties" : 
+                            {
+                                "value" : 
+                                {
+                                    "bsonType" : "string"
+                                },
+                                "comments" : 
+                                {
+                                    "bsonType" : "string"
+                                }
+                            }
+                        },
+                        "methodDetails" : 
+                        {
+                            "bsonType" : "object",
+                            "properties" : 
+                            {
+                                "value" : 
+                                {
+                                    "bsonType" : "string"
+                                },
+                                "comments" : 
+                                {
+                                    "bsonType" : "string"
+                                }
+                            }
+                        },
+                        "instrument" : 
+                        {
+                            "bsonType" : "object",
+                            "properties" : 
+                            {
+                                "value" : 
+                                {
+                                    "bsonType" : "string"
+                                },
+                                "comments" : 
+                                {
+                                    "bsonType" : "string"
+                                }
+                            }
+                        },
+                        "evidence" : 
+                        {
+                            "bsonType" : "object",
+                            "properties" : 
+                            {
+                                "value" : 
+                                {
+                                    "bsonType" : "string"
+                                },
+                                "comments" : 
+                                {
+                                    "bsonType" : "string"
+                                }
+                            }
+                        },
+                        "statisticalModel" : 
+                        {
+                            "bsonType" : "object",
+                            "properties" : 
+                            {
+                                "value" : 
+                                {
+                                    "bsonType" : "string"
+                                },
+                                "comments" : 
+                                {
+                                    "bsonType" : "string"
+                                }
+                            }
+                        }
+                    },
+                    "additionalProperties" : false
+                },
+                "experimentalDetailsOt" :
+                {
+                    "bsonType" : "object",
+                    "required" : 
+                    ["comparisonOrder",
+                        "threshold",
+                        "method",
+                        "instrument",
+                        "evidence",
+                        "statisticalModel"    
+                    ],
+                    "properties" : 
+                    {
+                        "comparisonOrder" : 
+                        {
+                            "bsonType" : "object",
+                            "properties" : 
+                            {
+                                "value" : 
+                                {
+                                    "bsonType" : "string"
+                                },
+                                "comments" :
+                                {
+                                    "bsonType" : "string"
+                                }
+                            }
+                        },
+                        "threshold" :
+                        {
+                            "bsonType" : "object",
+                            "properties" : 
+                            {
+                                "value" : 
+                                {
+                                    "bsonType" : "string"
+                                },
+                                "comments" : 
+                                {
+                                    "bsonType" : "string"
+                                }
+                            }
+                        },
+                        "method" : 
+                        {
+                            "bsonType" : "object",
+                            "properties" : 
+                            {
+                                "value" : 
+                                {
+                                    "bsonType" : "string"
+                                },
+                                "comments" :
+                                {
+                                    "bsonType" : "string"
+                                }
+                            }
+                        },
+                        "methodDetails" : 
+                        {
+                            "bsonType" : "object",
+                            "properties" : 
+                            {
+                                "value" : 
+                                {
+                                    "bsonType" : "string"
+                                },
+                                "comments" :
+                                {
+                                    "bsonType" : "string"
+                                }
+                            }
+                        },
+                        "instrument" : 
+                        {
+                            "bsonType" : "object",
+                            "properties" : 
+                            {
+                                "value" : 
+                                {
+                                    "bsonType" : "string"
+                                },
+                                "comments" :
+                                {
+                                    "bsonType" : "string"
+                                }
+                            }
+                        },
+                        "evidence" : 
+                        {
+                            "bsonType" : "object",
+                            "properties" : 
+                            {
+                                "value" : 
+                                {
+                                    "bsonType" : "string"
+                                },
+                                "comments" :
+                                {
+                                    "bsonType" : "string"
+                                }
+                            }
+                        },
+                        "statisticalModel" : 
+                        {
+                            "bsonType" : "object",
+                            "properties" : 
+                            {
+                                "value" : 
+                                {
+                                    "bsonType" : "string"
+                                },
+                                "comments" :
+                                {
+                                    "bsonType" : "string"
+                                }
+                            }
+                        }
+                    },
+                    "additionalProperties" :false
+                }
+            }
+        }
+    },
+    "validationLevel" : "strict",
+    "validationAction" : "error"
+}

@@ -4,16 +4,16 @@
         "$jsonSchema" :
         {
             "title" : "Metadata section",
-            "description" : "Schema json to metadata section",
+            "description" : "Schema bjson to metadata section",
             "bsonType" : "object",
             "required" : 
             ["_id",
-                "datasetTitle",
+                "title",
                 "pmid",
-                "correspondingAuthorEmail",
+                "author",
                 "strain",
                 "referenceGenome",
-                "datasetAccesionNumberDatabase"
+                "accessDatabase"
             ],
             "oneOf" :
             [
@@ -45,7 +45,7 @@
                 {
                     "bsonType" : "string"
                 },
-                "datasetTitle" : 
+                "title" : 
                 {
                     "bsonType" : "object",
                     "properties" : 
@@ -75,7 +75,7 @@
                         }
                     } 
                 },
-                "correspondingAuthorEmail" : 
+                "author" : 
                 {
                     "bsonType" : "object",
                     "properties" : 
@@ -120,7 +120,7 @@
                         }
                     }
                 },
-                "datasetAccesionNumberDatabase" :
+                "accessNumberDatabase" :
                 {
                     "bsonType" : "object",
                     "properties" : 

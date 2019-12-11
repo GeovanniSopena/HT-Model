@@ -18,26 +18,19 @@
             "oneOf" :
             [
                 {
-                    "required" : ["experimentalDetailsB", "identificationDetailsTfbs"],
+                    "required" : ["experimentalDetailsB", "identificationDetailsB"],
                     "not" : 
                     {
-                        "required" : ["experimentalDetailsGe", "experimentalDetailsOt"]
+                        "required" : ["experimentalDetailsG"]
                     }
                 },
                 {
-                    "required" : ["experimentalDetailsGe"],
+                    "required" : ["experimentalDetailsG"],
                     "not" : 
                     {
-                        "required" : ["experimentalDetailsB", "identificationDetailsTfbs", "experimentalDetailsOt"]
+                        "required" : ["experimentalDetailsB", "identificationDetailsB"]
                     }
-                },
-                {
-                    "required" : ["experimentalDetailsOt"],
-                    "not" :
-                    {
-                        "required" : ["experimentalDetailsB", "identificationDetailsTfbs" ,"experimentalDetailsGe"]
-                    }
-                }  
+                } 
             ],
             "properties" :
             {
@@ -241,7 +234,7 @@
                     },
                     "additionalProperties" : false
                 },
-                "identificationDetailsTfbs" : 
+                "identificationDetailsB" : 
                 {
                     "bsonType" : "object",
                     "required" : 
@@ -331,96 +324,7 @@
                     },
                     "additionalProperties" : false
                 },
-                "experimentalDetailsGe" :
-                {
-                    "bsonType" : "object",
-                    "required" : 
-                    ["method",
-                        "instrument",
-                        "evidence",
-                        "statisticalModel"
-                    ],
-                    "properties" : 
-                    {
-                        "method" :
-                        {
-                            "bsonType" : "object",
-                            "properties" : 
-                            {
-                                "value" : 
-                                {
-                                    "bsonType" : "string"
-                                },
-                                "comments" : 
-                                {
-                                    "bsonType" : "string"
-                                }
-                            }
-                        },
-                        "methodDetails" : 
-                        {
-                            "bsonType" : "object",
-                            "properties" : 
-                            {
-                                "value" : 
-                                {
-                                    "bsonType" : "string"
-                                },
-                                "comments" : 
-                                {
-                                    "bsonType" : "string"
-                                }
-                            }
-                        },
-                        "instrument" : 
-                        {
-                            "bsonType" : "object",
-                            "properties" : 
-                            {
-                                "value" : 
-                                {
-                                    "bsonType" : "string"
-                                },
-                                "comments" : 
-                                {
-                                    "bsonType" : "string"
-                                }
-                            }
-                        },
-                        "evidence" : 
-                        {
-                            "bsonType" : "object",
-                            "properties" : 
-                            {
-                                "value" : 
-                                {
-                                    "bsonType" : "string"
-                                },
-                                "comments" : 
-                                {
-                                    "bsonType" : "string"
-                                }
-                            }
-                        },
-                        "statisticalModel" : 
-                        {
-                            "bsonType" : "object",
-                            "properties" : 
-                            {
-                                "value" : 
-                                {
-                                    "bsonType" : "string"
-                                },
-                                "comments" : 
-                                {
-                                    "bsonType" : "string"
-                                }
-                            }
-                        }
-                    },
-                    "additionalProperties" : false
-                },
-                "experimentalDetailsOt" :
+                "experimentalDetailsG" :
                 {
                     "bsonType" : "object",
                     "required" : 
